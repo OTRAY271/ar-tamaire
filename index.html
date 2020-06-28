@@ -326,9 +326,9 @@
         const markerPos = mesh1.getWorldPosition();
         const dammyPos = dammyMesh.getWorldPosition();
         mesh2.position.set(
-          dammyPos.x - worldPos.x,
-          dammyPos.y - worldPos.y,
-          dammyPos.z - worldPos.z
+          dammyPos.x - markerPos.x,
+          dammyPos.y - markerPos.y,
+          dammyPos.z - markerPos.z
         ); // 初期位置
         marker1.add(mesh2); // メッシュをマーカに追加
 

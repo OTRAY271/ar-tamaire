@@ -32,7 +32,7 @@
     <!-- https://github.com/tweenjs/tween.js/tree/master/src/ より DL -->
     <script src="plugins/Tween.js"></script>
 
-    <script src="plugins/GLTFLoader.js"></script>
+    <!--<script src="plugins/GLTFLoader.js"></script>-->
 
     <script>
       //===================================================================
@@ -116,7 +116,7 @@
       var controls = new THREEx.ArMarkerControls(context, marker1, {
         // マーカを登録
         type: "pattern", // マーカのタイプ
-        patternUrl: "assets/pattern-hiro.patt", // マーカファイル
+        patternUrl: "assets/pattern-marker.patt", // マーカファイル
       });
       scene.add(marker1); // マーカをシーンに追加
       // モデル（メッシュ）

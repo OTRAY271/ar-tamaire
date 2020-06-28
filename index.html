@@ -335,9 +335,9 @@
         ); // 初期位置
         marker1.add(mesh2); // メッシュをマーカに追加
 
-        scene.remove(dammyMesh);
         const op = mesh2.getWorldPosition();
         const om = marker1.getWorldPosition();
+        const od = dammyMesh.getWorldPosition();
         alert(
           "OP=(" +
             op.x +
@@ -345,13 +345,21 @@
             op.y +
             "," +
             op.z +
-            "), OM=" +
+            "), OM=(" +
             om.x +
             "," +
             om.y +
             "," +
-            om.z
+            om.z +
+            "), OD=(" +
+            od.x +
+            "," +
+            od.y +
+            "," +
+            od.z +
+            ")"
         );
+        scene.remove(dammyMesh);
 
         // 球体を作成
         /*const geometry = new THREE.SphereGeometry(300, 30, 30);

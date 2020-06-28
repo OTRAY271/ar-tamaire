@@ -326,13 +326,22 @@
         const markerPos = marker1.getWorldPosition();
         const dammyPos = dammyMesh.getWorldPosition();
         mesh2.position.set(
-          dammyPos.x - markerPos.x,
+          /*dammyPos.x - markerPos.x,
           dammyPos.y - markerPos.y,
-          dammyPos.z - markerPos.z
+          dammyPos.z - markerPos.z*/
+          0,
+          0,
+          0
         ); // 初期位置
         marker1.add(mesh2); // メッシュをマーカに追加
 
         scene.remove(dammyMesh);
+        alert(
+          "OP=" +
+            mesh2.getWorldPosition() +
+            ", OM=" +
+            marker1.getWorldPosition()
+        );
 
         // 球体を作成
         /*const geometry = new THREE.SphereGeometry(300, 30, 30);

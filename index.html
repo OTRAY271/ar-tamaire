@@ -298,6 +298,7 @@
       //===================================================================
       // Original
       //===================================================================
+      let mesh2 = null;
       window.addEventListener("touchstart", (event) => {
         // モデル（メッシュ）
         var geo = new THREE.CubeGeometry(1, 1, 1); // cube ジオメトリ（サイズは 1x1x1）
@@ -307,7 +308,7 @@
           opacity: 1.0, // 不透明度
           side: THREE.DoubleSide, // 内側も描く
         });
-        var mesh2 = new THREE.Mesh(geo, mat); // メッシュを生成
+        mesh2 = new THREE.Mesh(geo, mat); // メッシュを生成
         mesh2.name = "cube2"; // メッシュの名前（後でピッキングで使う）
         mesh2.position.set(0, 0, 0); // 初期位置
         scene.add(mesh2); // メッシュをマーカに追加
@@ -337,6 +338,14 @@
         context.update(source.domElement); // ARToolkitのコンテキストを更新
         TWEEN.update(); // Tweenアニメーションを更新
         renderer.render(scene, camera); // レンダリング実施
+
+        if (mesh2 !== null) {
+          mesh2.position.set(
+            mesh2.position.x,
+            mesh2.position.y - 0.1,
+            mesh2.position.z
+          );
+        }
       }
       renderScene(); // 最初に1回だけレンダリングをトリガ
     </script>

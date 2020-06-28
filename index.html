@@ -310,8 +310,9 @@
         });
         mesh2 = new THREE.Mesh(geo, mat); // メッシュを生成
         mesh2.name = "cube2"; // メッシュの名前（後でピッキングで使う）
-        mesh2.position.set(0, 0, 0); // 初期位置
-        scene.add(mesh2); // メッシュをマーカに追加
+        const worldPos = mesh1.getWorldPosition();
+        mesh2.position.set(0 - worldPos.x, 0 - worldPos.y, 0 - worldPos.z); // 初期位置
+        marker1.add(mesh2); // メッシュをマーカに追加
         // 球体を作成
         /*const geometry = new THREE.SphereGeometry(300, 30, 30);
         const material = new THREE.MeshStandardMaterial({ color: 0xff0000 });

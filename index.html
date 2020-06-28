@@ -336,11 +336,21 @@
         marker1.add(mesh2); // メッシュをマーカに追加
 
         scene.remove(dammyMesh);
+        const op = mesh2.getWorldPosition();
+        const om = marker1.getWorldPosition();
         alert(
-          "OP=" +
-            mesh2.getWorldPosition() +
-            ", OM=" +
-            marker1.getWorldPosition()
+          "OP=(" +
+            op.x +
+            "," +
+            op.y +
+            "," +
+            op.z +
+            "), OM=" +
+            om.x +
+            "," +
+            om.y +
+            "," +
+            om.z
         );
 
         // 球体を作成
